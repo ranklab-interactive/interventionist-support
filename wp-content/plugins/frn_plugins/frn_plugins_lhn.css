@@ -1,0 +1,347 @@
+.lhn_help_btn
+{
+	display: block;
+	background: url("images/lhn_slideout-btn_default.gif") no-repeat scroll 0 0 transparent !important;
+	width: 37px;
+	height: 149px;
+	position: fixed;
+	top: 125px;
+	right:0;
+	cursor: pointer;
+	z-index:99999;
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+	.lhn_help_btn
+	{
+		border-bottom-left-radius: 10px;
+		border-top-left-radius: 10px;
+		height: 50px;
+		top:75%;
+		width: 60px;
+		background: -webkit-linear-gradient(#2f6c12, #57c422); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(#2f6c12, #57c422); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(#2f6c12, #57c422); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(#2f6c12, #57c422); /* Standard syntax */
+		background: url("images/lhn_slideout-btn_icon.png") #57c422 !important;
+		-webkit-box-shadow: inset 0px 0px 8px 0px rgba(50, 50, 50, 0.75);
+		-moz-box-shadow:    inset 0px 0px 8px 0px rgba(50, 50, 50, 0.75);
+		box-shadow:         inset 0px 0px 8px 0px rgba(50, 50, 50, 0.75);
+	}
+}
+.lhn_help_container
+{
+    font-family: Tahoma !important;
+	font-size: 12px !important;
+	display: none;
+	/*height: 200px;*/
+	position: fixed;
+	top: 110px;
+	right: 0;
+	z-index:99999;
+	text-align:left !important;
+}
+
+.lhn_help_container a {
+    cursor: pointer;
+}
+
+.lhn_knowledge_container{
+	font-family: Tahoma !important;
+	font-size: 12px !important;
+	color: #7cc475 !important;
+	background-color: #7cc475;
+	width: 570px;
+	border: 3px solid #f5f5f5;
+	border-right: none;
+	border-radius: 10px 0 0 10px;
+	box-shadow: 0 0 10px #000000;
+	-webkit-box-shadow: 0 0 10px #000000;
+	padding-bottom: 13px;
+	position:relative;
+	z-index:100000;	
+	float:right;
+}
+
+.lhn_input_container{
+	background-color: #f3f3f3 !important;
+	width: 562px;
+	float: right;
+	position: relative;
+	top: 6px;
+	border: 2px solid #bababa;
+	border-right: none;
+	border-radius: 5px 0 0 5px;
+}	
+
+.lhn_kb_search{
+	padding-left: 47px;
+	background-color: #f3f3f3 !important;
+	width: 510px;
+	min-height:145px;
+}
+
+.lhn_kb_articles .lhn_loading 
+{
+	display:none;
+}
+
+.lhn_kb_articles.lhn_display_loading .lhn_loading 
+{
+	display:block;
+}
+
+.lhn_loading{
+	background: url("//www.livehelpnow.net/lhn/js/css/helppanel/green/images/ajax-loader.gif") no-repeat scroll 0 0 transparent;
+	display: block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 98px;
+	right: 40px;
+}
+
+.lhn_help_exit{
+	background: url("//www.livehelpnow.net/lhn/js/css/helppanel/green/images/exit.png") no-repeat scroll 0 0 transparent;
+	display: block;
+	width: 15px;
+	height: 16px;
+	position: absolute;
+	top: 7px;
+	left: 538px;
+}
+
+.lhn_find_ans_title{
+    font-family: Tahoma !important;
+	margin: 15px 0 0 !important;
+	font-size: 24px !important;
+    color: #3a3a3a !important;
+    text-shadow: none !important;
+}
+
+.lhn_statement{
+	margin: 3px 0 0 !important;
+	font-size: 12px !important;
+	font-weight: normal !important;
+	color: #3a3a3a !important;
+}
+
+.lhn_search_box{
+	margin-top: 15px !important;
+	padding-bottom: 4px !important;
+	width: 485px !important;
+	height: 38px !important;
+	border: 1px solid #969696;
+	border-radius: 5px;
+	font-size: 24px !important;
+	color: #3a3a3a;
+}
+
+.lhn_options_container{
+	width: 256px;
+	height: 155px;
+	float:right;
+	position:relative;
+	z-index:99999;    
+	padding-top: 10px;
+    top: 2px;
+}
+
+.lhn_options_outer{
+	width: 260px;
+	height: 146px;
+	color: #3a3a3a;
+	background-color: #17860a;
+	border: 3px solid #f5f5f5;
+	border-right: none;
+	border-radius: 10px 0 0 10px;
+	box-shadow: 0 0 10px #000000;
+	-webkit-box-shadow: 0 0 10px #000000;
+}
+
+.lhn_options_inner{
+	position: relative;
+	top: 7px;
+	left: 6px;
+	background-color: #f3f3f3;
+	width: 245px;
+	height: 128px;
+	border: 2px solid #bababa;
+	border-right: none;
+	border-radius: 5px 0 0 5px;
+}
+.lhn_options_btn, .lhn_options_btn:visited{
+	display: block;
+	position: absolute;
+	top: 25px;
+	background: url("//www.livehelpnow.net/lhn/js/css/helppanel/green/images/options_btn.gif") no-repeat scroll 0 0 transparent;
+	width: 20px;
+	height: 108px;
+}
+.lhn_options_btn:hover{
+	display: block;
+	position: absolute;
+	top: 25px;
+	background: url("//www.livehelpnow.net/lhn/js/css/helppanel/green/images/options_btn.gif") no-repeat scroll -20px 0 transparent;
+	width: 20px;
+	height: 108px;
+}
+
+.lhn_hide_op_btn, .lhn_hide_op_btn:visited{
+	background: url("//www.livehelpnow.net/lhn/js/css/helppanel/green/images/hide_op_btn.gif") no-repeat scroll 0 0 transparent;
+}
+.lhn_hide_op_btn:hover{
+	background: url("//www.livehelpnow.net/lhn/js/css/helppanel/green/images/hide_op_btn.gif") no-repeat scroll -20px 0 transparent;
+}
+
+.lhn_btn_container{
+	position: absolute;
+	top: 0;
+	left: 14px;
+	width: 207px;
+	height: 128px;
+}
+
+.lhn_live_chat_btn
+{
+	display: block;
+	background: url("images/lhn_chat-btn.png") no-repeat scroll 0 -31px transparent;
+	width: 207px;
+	height: 31px;
+	margin-top: 11px;
+}
+
+
+.lhn_live_chat_btn:hover{
+	display: block;
+	background: url("images/lhn_chat-btn.png") no-repeat scroll 0 0 transparent;
+	width: 207px;
+	height: 31px;
+	margin-top: 11px;
+}
+
+.lhn_ticket_btn
+{
+	display: block;
+	background: url("images/lhn_email-btn.png") no-repeat scroll 0 -31px transparent;
+	width: 207px;
+	height: 31px;
+	margin-top: 7px;
+}
+
+.lhn_ticket_btn:hover{
+	display: block;
+	background: url("images/lhn_email-btn.png") no-repeat scroll 0 0 transparent;
+	width: 207px;
+	height: 31px;
+	margin-top: 7px;
+}
+
+.lhn_ticket_btn:visited{
+	display: block;
+	/* background: url("images/send-an-email-visited.gif") no-repeat scroll 0 0 transparent; */
+	width: 207px;
+	height: 31px;
+	margin-top: 7px;
+}
+
+.lhn_callback_btn, .lhn_callback_btn:visited{
+	display: block;
+	background: url("//www.livehelpnow.net/lhn/js/css/helppanel/green/images/call_btn.gif") no-repeat scroll 0 -31px transparent;
+	width: 207px;
+	height: 31px;
+	margin-top: 7px;
+}
+.lhn_callback_btn:hover{
+	display: block;
+	background: url("//www.livehelpnow.net/lhn/js/css/helppanel/green/images/call_btn.gif") no-repeat scroll 0 0 transparent;
+	width: 207px;
+	height: 31px;
+	margin-top: 7px;
+}
+
+.lhn_kb_articles{
+	width: 487px;
+	max-height: 450px;
+	margin: 12px 0;
+	overflow: auto;
+}
+
+.lhn_rating {
+    margin-bottom:10px;
+    display: inline-block;
+    width:100%;
+}
+
+.lhn_views{
+    margin-top: 4px;
+    text-align: left;
+    width: 80px;
+    float:left;
+}
+
+
+.lhn_ratings{
+    margin: 5px 5px 0 0;
+    width: 100px;
+    float:right;
+}
+
+#lhn_copyright 
+{
+	display:none;
+	bottom: 10px;
+    font-size: 9px !important;
+    position: absolute;
+    right: 10px;
+    text-align: right;
+    z-index: 100001;
+}
+
+#lhn_copyright a, #lhn_copyright a:visited 
+{
+	text-decoration:none !important;
+	color: #0096ff !important;
+	font-size: 9px important;
+}
+
+p.flyout-phone {
+    color: #4d4d4d;
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 21px;
+    line-height: 25px;
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    margin:5px 0px 0px 0px;
+}
+
+p.flyout-bottom {
+    color: #7A7A7A;
+    line-height: 10px;
+    padding-bottom: 0px;
+    text-align: center;
+    font-size: 10px;
+    margin:0px;
+}
+
+div.flyout-phone {
+    color: #4d4d4d;
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 21px;
+    line-height: 25px;
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    margin:0px;
+}
+
+div.flyout-bottom {
+    color: #7A7A7A;
+    line-height: 10px;
+    padding-bottom: 0px;
+    text-align: center;
+	font-size: 10px;
+}

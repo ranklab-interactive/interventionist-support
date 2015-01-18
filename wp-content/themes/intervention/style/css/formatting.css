@@ -1,0 +1,187 @@
+code textarea{clear:both; margin-bottom:80px;}
+
+
+
+/* ------- Fluid Columns ------- */
+.one-half{ width:46%; }
+.one-third{ width:28.66%; }
+.two-third{ width:63.33%; }
+.one-fourth{ width:20%; }
+.three-fourth{ width:72%; }
+.one-fifth{ width:16.8%; }
+.two-fifth{ width:37.6%; }
+.three-fifth{ width:58.4%; }
+.four-fifth{ width:67.2%; }
+.one-sixth{ width:13.33%; }
+.five-sixth{ width:82.67%; }
+.one-half,.one-third,.two-third,.three-fourth,.one-fourth,.one-fifth,.two-fifth,.three-fifth,.four-fifth,.one-sixth,.five-sixth{ position:relative; padding-right:4%; margin:20px 0 12px 0; float:left; }
+.last{ margin-right:0 !important; clear:right; }
+.clearboth { display:block; font-size:0; height:0; line-height:0; width:100%;}
+
+.sub-text { font-size:20px;color:#344f0a;font-family: 'Coustard', serif;}
+.separator { height:15px;border-bottom:1px solid #76b617; margin-bottom:30px; clear:both;}
+.space {height:1px;width:100%;clear:both;background:none;padding:5px 0;}
+
+
+.clearfix:after { content:"."; display:block; clear:both; visibility:hidden; line-height:0; height:0; }
+.clearfix { display:inline-block; }
+html[xmlns] .clearfix { display:block; }
+* html .clearfix { height: 1%; }
+
+/* ------- Boxes ------- */
+.boxx {-webkit-border-radius: 3px;border-radius: 3px; border: 1px solid #ccc; padding:20px;padding-top:18px; margin:30px 0px 30px 0px;clear:both;overflow:auto;background:none;font-size:18px;}
+.boxx h3  { padding-left:0;font-size: 24px; }
+.boxx p { margin:0 0 10px 0px;}
+.boxx ul { margin-left:0px;margin-bottom:0px; }
+.left-content-block .boxx ul { margin:0;padding:10px; }
+.left-content-block .boxx ul li {padding-bottom:10px;}
+
+.boxx.lgreen {color:#344f0a;border: 1px solid #76b617;background:#f5ffe6;}
+.boxx.fgreen {color:#344f0a;border: 1px solid #ccc;background:none;line-height:1.2em;font-size:20px;font-family: 'Coustard', serif;}
+
+.boxx.green {background-color: #578611;color: #fff;}
+.boxx.green h3 {color:#76b617;}
+.boxx.green ul {color: #fff;}
+.boxx.green a:hover {color:#fcba56;}
+.boxx.green p.sub-text {color:#f5ffe6;margin-bottom:20px;}
+
+.boxx.half-left { width:42%;float:left;margin-right:30px;margin-top:3px;margin-bottom:10px; }
+.boxx.half-right { width:42%;float:right;margin-left:30px;margin-top:3px;margin-bottom:10px; }
+
+
+/*
+	Accordion :: Must have js script
+*/
+.accordion{margin-bottom:50px;}
+.accordion h3{display:block; padding:10px; font-size:18px; background:#f0f0f0; margin:0; border-bottom:1px solid #fff;}
+.accordion h3:hover {cursor: pointer; color:#555;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+
+}
+.accordion div {padding:20px 0 20px 20px; font-size:14px;}
+.plus {float:right;font-size:24px;font-weight:normal;line-height:18px;font-style:normal;}
+
+/*
+	TOC
+*/
+.toc{float:left; background:#578611; padding:20px; margin:0 25px 10px 0;}
+.toc h2{color:#fff; background:url(../images/icons/icon-bookmark.png) top left no-repeat; padding-left: 40px; text-shadow:-1px -1px #000; line-height: 30px;}
+.toc a{color:#fff; font-size:14px; font-weight:100; float:left; font-style: italic; margin-bottom:3px; clear:both;}
+.toc a:hover{color:#000;}
+
+
+/*
+	note-box
+*/
+.note-box {
+float:left; 
+width: 100%;
+background:#F4F4F4; 
+padding:20px;
+margin:0 25px 20px 0px;
+}
+.note-box ul {
+margin:-10px 0px -5px 0px;
+}
+
+
+/*
+	note-box
+*/
+.note-box-2 {
+float:left; 
+width: 1020px;
+background:#F4F4F4; 
+padding:20px;
+margin:0 0px 20px 0px;
+}
+.note-box-2 ul {
+margin: 5px 0px -5px 0px;
+}
+
+
+/*
+	Content Tabs
+*/
+.content-tabs{margin-bottom:50px; padding:0; overflow: auto;}
+.content-tabs .menu-wrapper{background:#ebebeb; overflow:hidden; padding:5px 0 0 5px; margin:0;}
+.content-tabs ul.tab-menu{list-style-image: none; list-style:none; margin-bottom:0; list-style-position:inherit;}
+.content-tabs ul.tab-menu li{list-style: none; list-style-image: none; float:left; margin-bottom:none;}
+.content-tabs ul.tab-menu li a{display: block; float:left; height:55px; line-height: 55px; padding:0 25px; text-align: center; font-family: 'Coustard', serif; color:#949494; font-size:16px;}
+.content-tabs ul.tab-menu li a:hover{color:#76b617;}
+.content-tabs ul.tab-menu li a.current{background: #fff; color:#76b617;}
+.content-tabs .tab-content-wrapper{padding:20px;  margin-top:-10px; overflow: auto; border:1px solid #ebebeb; border-top:none;}
+.content-tabs .tab-content-wrapper h3{line-height: 1em;}
+
+
+.widget .inside h2 { line-height:120%; }
+
+
+
+.xlfont {
+font-size: 70px;
+line-height: 70px;
+font-family: 'Coustard', serif;  
+font-weight:normal; 
+color:#5617b6;}
+
+.lgfont {
+margin-top:1em;
+line-height: 1em; 
+font-family: 'Coustard', serif; 
+font-weight:normal;
+font-size: 22px; 
+color:#76b617;}
+
+.lgpfont {
+margin:0px 12px 0px 0px;
+line-height: 1em; 
+font-family: 'Coustard', serif; 
+font-weight:normal;
+font-size: 22px; 
+color:#5617b6;}
+
+.purplefont {
+margin:0px 0px 0px 0px;
+line-height: 1.25em; 
+font-family: 'Coustard', serif; 
+font-weight:normal;
+font-size: 19px; 
+color:#58407c;}
+
+
+
+.separatorbox {
+width:100%;
+margin:2em 0em 1em 0em;
+padding:.5em 0em 2.5em 0em;
+border-top-color: #CCCCCC;
+border-top-style: solid;
+border-top-width: 1px;
+border-bottom-color: #CCCCCC;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+}
+
+.alignl {margin-right: .5em; margin-bottom: 1em; display: inline; float: left;}
+
+
+/*
+	Numbers and icons
+*/
+
+.number-icon {float:left; width: 100px; height:100px; background: url(../images/number-icon.jpg) top left no-repeat; margin: 0em .75em 0em 0em; text-align: center; line-height: 100px; vertical-align: middle; padding-top:.08em; font-size:60px; color:#f5f8e5; font-weight:bold;}
+
+.check-icon {width: 75px; height:75px; background: url(../images/check.png) top left no-repeat; margin-top: 0em;} 
+
+.grn-line-lft-dwn {width: 665px; height:162px; background: url(../images/green-line.jpg) top left no-repeat; margin-top: 0em;}
+
+.frn-service {font-size: 12px; line-height: 16px;}
+.frn-service img {float: left;}
+#frn-logo {padding-right: 10px; padding-bottom: 10px;}
+#jcaho-logo {padding-right: 32px; padding-left: 32px;}

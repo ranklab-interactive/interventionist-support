@@ -1,0 +1,5 @@
+[23-Apr-2013 01:19:39 America/Chicago] PHP Warning:  require(ABSPATHWPINC/option.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/intervention/public_html/wp-includes/functions.php on line 8
+[23-Apr-2013 01:19:39 America/Chicago] PHP Warning:  require(ABSPATHWPINC/option.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/intervention/public_html/wp-includes/functions.php on line 8
+[23-Apr-2013 01:19:39 America/Chicago] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'ABSPATHWPINC/option.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/intervention/public_html/wp-includes/functions.php on line 8
+[16-Jul-2013 12:21:48 America/Chicago] PHP Fatal error:  Call to undefined function _deprecated_file() in /home/intervention/public_html/wp-includes/registration-functions.php on line 7
+[19-Dec-2014 07:03:26 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home/intervention/public_html/wp-includes/admin-bar.php on line 48

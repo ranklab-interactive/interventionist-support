@@ -1,0 +1,373 @@
+<?php
+/*
+Template Name: [Interventionist]
+*/
+?>
+<?php
+
+$title = get_the_title();
+
+//If the form is submitted
+if(isset($_POST['submitted'])) {
+	$errorType = "";
+	$ga_Error = "";
+	//Check to see if the honeypot captcha field was filled in
+	if(trim($_POST['security']) != '') {
+		//$captchaError = true;
+		//$hasError = true;
+		//$errorType = $errorType . "Captcha Blank (maybe others too); ";
+		$captchaError = "Spam bot submitted this.";
+		
+		//$ga_Error= "
+		//	<script type='text/javascript'>
+		//		 _gaq.push(['_trackEvent', 'Contact an Interventionist', 'Contact Errors', '".$errorType." (SL: ".$title.")', 'From:".$email."; To:".$emailTo."']);
+		//	</script>";
+
+	} else {
+	
+		session_start();
+		//Security Check
+		//$check = $_POST["check1"] + $_POST["check2"];
+		//$ans = $_POST["security"];
+		
+		/*
+		if ($check <> $ans) {
+			$hasError = true;
+			$captchaError = true;
+			$errorType = $errorType . "Wrong Captcha; ";
+			$captchaError = "You did not add them correctly.";
+		}
+		*/
+	
+		//Check to make sure that the name field is not empty
+		if(trim($_POST['maker']) === '') {
+			$nameError = 'You forgot to enter your name.';
+			$hasError = true;
+			$errorType = $errorType . "No Name; ";
+		} else {
+			$name = strip_tags(trim($_POST['maker']));
+		}
+		
+		//Check to make sure sure that a valid email address is submitted
+		if(trim($_POST['wire']) === '')  {
+			$emailError = 'You forgot to enter your email address.';
+			$hasError = true;
+			$errorType = $errorType . "No Email; ";
+		} else if (!eregi("^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$", trim($_POST['wire']))) {
+			$emailError = 'You entered an invalid email address.';
+			$hasError = true;
+			$errorType = $errorType . "Bad Email; ";
+		} else {
+			$email = strip_tags(trim($_POST['wire']),'<br />,<br>');
+		}
+			
+		//Check to make sure comments were entered	
+		if(trim($_POST['gibberish']) === '') {
+			$commentError = 'You forgot to enter your comments.';
+			$hasError = "y";
+			$errorType = $errorType . "No Comments; ";
+		} else {
+			if(function_exists('stripslashes')) {
+				$comments = nl2br(trim($_POST['gibberish']));
+				$comments = strip_tags(stripslashes($comments),"<br />,<br>");
+			} else {
+				$comments = nl2br(trim($_POST['gibberish']));
+				$comments = strip_tags($comments,"<br />,<br>");
+			}
+		}
+
+		if(isset($hasError)) $ga_Error= "
+			<script type='text/javascript'>
+				 _gaq.push(['_trackEvent', 'Contact an Interventionist', 'Contact Errors', '".$errorType." (SL: ".$title.")', 'From:".$email."; To:".$emailTo."']);
+			</script>";
+		else $ga_Error = "";
+			
+		//If there is no error, send the email
+		if(!isset($hasError)) {
+			
+			$pageURL = 'http';
+			if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+			$pageURL .= "://";
+			$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+			$pageURL = str_replace("?thankyou","",$pageURL);
+			
+			$blog_name = get_bloginfo('name');
+			$template_base = get_bloginfo('template_directory');
+			$post_id = intval($_POST["id"]);
+			$interventionist_email = get_post_meta($post_id,'frothy_email', true);
+			$interventionist_name = trim($_POST["name"]);
+			//If in test mode (looks for %%test%% in name field, and switches to email address to also be the from and doesn't not copy abhi
+			if(strpos($name,"%%test%%")===false) $emailTo = $interventionist_email;
+			else {$emailTo = $email;$interventionist_name=$name;}
+			$interventionist_body = $interventionist_name.' ('.$interventionist_email.')';
+			$subject = "Request from Someone Interested in ".$interventionist_name." on InterventionSupport.com"; // . ucwords(str_replace("http://","",home_url()));
+			$sendCopy = trim($_POST['sendCopy']);
+			
+			//Used to enable plain text emails showing at top for email clients that don't read HTML (or don't like it)
+			$unique_boundary = uniqid('frn');
+			$boundary = "\r\n\r\n--" . $unique_boundary . "\r\n" . "Content-type: text/html;charset=utf-8\r\n\r\n";
+
+			$headers = 'From: '.$name.' <'.$email.'>' . "\r\n" . 
+				'Reply-To: ' . $email . "\r\n" . 
+				'Content-Type: multipart/alternative; boundary=' . $unique_boundary . "\r\n";
+			
+			//old: $body = "Name: $name \n\nEmail: $email \n\nComments: $comments";
+			
+			$copy_intro = '<p>We&#39;re so glad you are considering recovery for you or your loved one! Below is the copy of your message sent from the page for <a href="'.$pageURL.'">'.$interventionist_name.'</a>, on <a href="'.home_url().'">InterventionSupport.com</a>. If at any time you have questions or need to speak with someone about interventions feel free to contact us. We&#39;ll be glad to help!</p>' . "\r\n" . '
+			Sincerely, <br /> <br /> ' . "\r\n" . '
+			<a href="'.home_url().'">Intervention Support</a><br /> 
+			1 (888) 312-3296<br />
+			<font size="1">Provided by <a href="http://www.foundationsrecoverynetwork.com">Foundations Recovery Network</a></font><br />
+			<br /> 
+			<br />
+			<br />
+			<div align="center">- - -</div> <br /> <br /> <br />' . "\r\n";
+
+			$body = '			<style type="text/CSS">
+			   #mssg_info {
+			       	background-color:#ccc; 
+			       	font-family:Arial, Helvetica, sans-serif;
+				border:1px solid #999;
+				padding:3px;
+			    }
+			   a {color:#003366;text-decoration:none;}
+			   a:visited {color:#526375;text-decoration:none;}
+			   a:hover {color:#0066cc;text-decoration:underline;}
+			</style>' . "\r\n" . '	
+			<div id="mssg_info"><table border="0" cellspacing="1" style="font-family: Arial, Helvetica, sans-serif; font-size:9pt;">' . "\r\n" . '
+			<tr><td align="right" style="font-size:7pt">TO:</td><td>'.$interventionist_body.'</td></tr>' . "\r\n" . '
+			<tr><td align="right" style="font-size:7pt">FROM:</td><td>'.$name.' ('.$email.')</td></tr>' . "\r\n" . '
+			<tr><td align="right" style="font-size:7pt">SUBJECT:</td><td>'.$subject.'</td></tr>' . "\r\n" . '
+			</table></div>' . "\r\n" . '
+			<div style="font-size:7pt;margin-bottom:0px;margin-top:30px;">MESSAGE:</div>' . "\r\n" . 
+			$comments.'
+			<br />' . "\r\n" . '
+			<br />' . "\r\n" . '
+			<br />' . "\r\n" . '
+			<br />' . "\r\n" . '
+			</div>' . "\r\n" . '
+			<div style="font-size:7pt;margin-top:50px;">--<br />' . "\r\n" . '
+			This email was sent from the information page for <a href="'.$pageURL.'">'.$interventionist_name.'</a> on <a href="'.home_url().'">'.$blog_name.'</a>, a service provided by <a href="http://www.foundationsrecoverynetwork.com">Foundations Recovery Network</a>. 1 (888) 312-3296</div>' . "\r\n" . '
+			<a href="'.home_url().'"><img alt="'.$blog_name.'" src="'.$template_base.'/style/images/logo.png" border="0" height="70" width="210" /></a><br /> <br /> ';
+
+			//Plain text body
+			$plain_body = $comments . '
+
+
+
+			This email was sent from the information page for '.$interventionist_name.' ('.$pageURL.') on '.$blog_name.' ('.home_url().'), a service provided by Foundations Recovery Network (http://www.foundationsrecoverynetwork.com). 1 (888) 312-3296'
+;
+			
+			
+			//Email to interventionist
+			If($email=='daxon.edwards@frnmail.com') $emailTo = 'daxon.edwards@frnmail.com';
+			mail($emailTo, $subject, $plain_body . $boundary . '<body style="font-family: Arial, Helvetica, sans-serif; font-size:11pt;">'."\r\n".$body."\r\n </body> \r\n", $headers);
+			
+			//Email to Abhi and Dax
+			//$subject = 'Contact from ' . $blog_name . ': ' . $subject;
+			if(strpos($name,"%%test%%")===false and $email!='daxon.edwards@frnmail.com') $CopyTo = 'Abhilash Patel <abhilash@ranklab.com>, Daxon Edwards <daxon.edwards@frnmail.com>';
+				else $CopyTo = 'Daxon Edwards <daxon.edwards@frnmail.com>';
+			mail($CopyTo, '[Copy] '.$subject, $plain_body . $boundary . '<body style="font-family: Arial, Helvetica, sans-serif; font-size:11pt;">'."\r\n".$body."\r\n </body> \r\n", $headers);
+
+			
+			if($sendCopy == true) {
+				$body = str_replace("(".$emailTo.")","",$body);  //Removes facility email from email to user
+				$copy_intro = str_replace("(".$emailTo.")","",$copy_intro);  //Removes facility email from email to user
+				$plain_body_copy = strip_tags($copy_intro);
+				$subject = '[Copy] Your Message for '.$interventionist_name . ' from ' . $blog_name;
+				$headers = 'From: '.$blog_name.' <noreply@'.str_replace("http://","",str_replace("www.","",home_url())).'>' . "\r\n" . 'Content-Type: multipart/alternative; boundary=' . $unique_boundary . "\r\n";
+				$body = str_replace($interventionist_body,$interventionist_name,$body);
+				mail($email, $subject, $plain_body_copy . $plain_body . $boundary . '<body style="font-family: Arial, Helvetica, sans-serif; font-size:11pt;">'."\r\n".$copy_intro . $body . "\r\n </body> \r\n", $headers);
+			}
+			$emailSent = true;
+
+		}
+	}
+} ?>
+
+<?php get_header(); ?>
+
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
+<?php include(TEMPLATEPATH . "/library/includes/modules/page-id.php");?>
+
+<div class="content-block">
+<div class="wrapper">
+<div class="inside">
+	<div class="left-content">
+		<div class="info-block">
+		<div class="inside">
+		<div class="text-block">
+			<div itemscope itemtype="http://schema.org/Person">
+		      <?php
+			  	if ( has_post_thumbnail() ) {
+					the_post_thumbnail( 'medium', array('itemprop' => 'image'));
+				}
+		      ?>
+		      <h2><span itemprop="name"><?php the_title(); ?></span></h2>
+		      <p><span itemprop="jobTitle">Interventionist</span></p>
+		      <?php
+		      	if(get_post_meta($post->ID,'frothy_company_name', true)) { 
+					echo '<p><strong>Company: </strong>'.get_post_meta($post->ID,'frothy_company_name', true).'</p>';
+				}
+		      ?>
+		      <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+		      	<?php 
+			    if(get_post_meta($post->ID,'frothy_city', true)) { 
+					echo '<p><strong>Location: </strong><span itemprop="addressLocality">'.get_post_meta($post->ID,'frothy_city', true).'</span>,  <span itemprop="addressRegion">'.get_post_meta($post->ID,'frothy_state_select', true).'</span></p>';
+				}
+		      	?>
+		      </div>
+		      <?php
+				if(get_post_meta($post->ID,'frothy_website_url', true)) { 
+					echo '<p><strong>Website: </strong><a href="'.get_post_meta($post->ID,'frothy_website_url', true).'" target="_blank" itemprop="url">'.get_post_meta($post->ID,'frothy_website_url', true) .'</a></p>';
+				}
+		      ?>
+		    </div>
+		    <?php
+		    $postid = $post->ID;
+			$title = get_the_title();
+		    ?>
+		</div><!--end text-block -->
+		
+		
+		<?php 
+			echo '<div class="text-block">';
+			
+			//Image
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail( 'medium', array('itemprop' => 'image'));
+			}
+			
+			//Info
+			echo '<h2>';
+			echo the_title();
+			echo '</h2>';
+			if(get_post_meta($post->ID,'frothy_company_name', true)) { 
+				echo '<p><strong>Company: </strong>'.get_post_meta($post->ID,'frothy_company_name', true).'</p>';
+			}
+			if(get_post_meta($post->ID,'frothy_website_url', true)) { 
+				echo '<p><strong>Website: </strong><a href="'.get_post_meta($post->ID,'frothy_website_url', true).'" target="_blank">'.get_post_meta($post->ID,'frothy_website_url', true) .'</a></p>';
+			}
+			if(get_post_meta($post->ID,'frothy_city', true)) { 
+				echo '<p><strong>Location: </strong>'.get_post_meta($post->ID,'frothy_city', true).',  '.get_post_meta($post->ID,'frothy_state_select', true).'</p>';
+			}
+			$postid = $post->ID;
+			$title = get_the_title();
+			
+			echo '</div>';
+			/*
+			//Screenshot
+			if(get_post_meta($post->ID,'frothy_website_url', true)) { 
+				$web_url = get_post_meta($post->ID,'frothy_website_url', true);
+				echo do_shortcode( "[ss_screenshot width='200' site='". $web_url ."']"  );
+			}		
+			*/	
+		?>
+		</div><!-- end inside -->
+		</div><!-- end info-block -->
+		<?php the_content(); ?>
+		<?php include(TEMPLATEPATH . "/library/includes/page-share.php");?>
+	</div><!-- end left-content -->
+	<aside>
+	<div class="widget contact-block">
+	<div class="inside">
+		<?php if((isset($emailSent) && $emailSent == true) or $captchaError!="") { ?>
+
+		 <div class="thanks">
+		  <h2>Thanks, <?=$name;?></h2>
+		  <p>Your email was successfully sent! I will be in touch soon.</p>
+		  <p></p>
+		 </div>
+		<?php if($captchaError==="") { ?>
+		<script type="text/javascript">
+			 _gaq.push(['_trackEvent', 'Contact an Interventionist', 'Contact Completions', '[<?=$title; ?>]', 'From:<?=$email; ?>; To:<?=$emailTo; ?>']);
+		</script>
+		<?php } } else { 
+			
+			$num1 = rand(1,10);
+			$num2 = rand(1,10);
+		?>
+
+			<script type='text/javascript'>
+				function validateForm() {
+					var slform = document.getElementById("contactForm");
+					error_url="<?php the_permalink(); echo '?error'; ?>";
+					ty_url="<?php the_permalink(); echo '?thankyou'; ?>";					
+
+					if(this.maker.value=="" || this.wire.value=="" || slform.gibberish.value=="" || slform.security.value=="") slform.action = error_url;
+					else {
+						var re = /^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$/;
+						if(re.test(this.wire.value)) slform.action = error_url;
+						else if(<?=$num1;?> + <?=$num2;?> != slform.security.value) slform.action = error_url;
+						else slform.action = ty_url;
+					}
+				}
+			</script>
+
+			<h3>Call (888) 312-3296<br />
+			or Send a Message</h3>
+
+			<?php if(isset($hasError)) echo "<p class='error_main'>Please correct the errors below...</p>";
+			else echo "<p>Let us connect you with ".$title."</p>";
+			?>
+			<form id="contactForm" method="post" action="<?=the_permalink(); ?>" onSubmit="return validateForm();" >
+					<ul class="forms">
+					<li><label">Name</label>
+						<?php if($nameError != '') { ?>
+							<span class="error"><?=$nameError;?></span> 
+						<?php } ?>
+						<input type="text" name="maker" id="maker" value="<?php if(isset($_POST['maker'])) echo $_POST['maker'];?>" class="requiredField" />
+					</li>
+					
+					<li><label>Email</label>
+						<?php if($emailError != '') { ?>
+							<span class="error"><?=$emailError;?></span>
+						<?php } ?>
+						<input type="text" name="wire" id="wire" value="<?php if(isset($_POST['wire']))  echo $_POST['wire'];?>" class="requiredField wire" />
+						
+					</li>
+					
+					<li class="textarea"><label>Comments</label>
+						<?php if($commentError != '') { ?>
+							<span class="error"><?=$commentError;?></span> 
+						<?php } ?>
+						<textarea name="gibberish" id="gibberish" rows="20" cols="30" class="requiredField"><?php if(isset($_POST['gibberish'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['gibberish']); } else { echo $_POST['gibberish']; } } ?></textarea>
+						
+					</li>
+					
+					<li class="captcha">
+						<?php if($captchaError != '') { ?>
+							<span class="error"><?=$captchaError;?></span> 
+						<?php } ?>						
+						<label>For security, please solve: <?php echo $num1; ?> + <?php echo $num2; ?></label>
+						<input type="text" name="security" value="" style="width:50px;" />
+
+					</li>
+					
+					<li class="inline"><input type="checkbox" name="sendCopy" id="sendCopy" value="true"<?php if(isset($_POST['sendCopy']) && $_POST['sendCopy'] == true) echo ' checked="checked"'; ?> /> Send yourself a copy</li>
+					<li class="buttons">
+						<input type="hidden" name="check1" value="<?=$num1; ?>" />
+						<input type="hidden" name="check2" value="<?=$num2; ?>" />
+						<input type="hidden" name="name" value="<?=$title; ?>" />
+						<input type="hidden" name="submitted" id="submitted" value="true" />
+						<input type="hidden" name="id" value="<?=$postid; ?>" />
+						
+						 <br />
+						<button type="submit" >Send &raquo;</button> <?php //onClick="_gaq.push(['_trackEvent', 'Contact an Interventionist', 'Contact Attempts', 'SL: =$title; ', 'From:=$email; To:=$emailTo'])" ?>
+					</li>
+				</ul>
+				</form>
+					<?=$ga_Error;?>
+			
+			
+		<?php } ?>
+	</div><!-- end inside -->
+	</div><!-- end contact-block -->
+	</aside>
+	
+</div><!-- end wrapper div -->
+</div><!-- end inside div -->
+</div><!-- end content_block -->
+
+<?php endwhile; endif; ?>
+<?php get_footer(); ?>

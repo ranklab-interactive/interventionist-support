@@ -1,0 +1,35 @@
+form.frn_styles h3 {margin:2em 0 1em 0;}
+form.frn_styles h4{font-size:13px;margin-bottom:5px;}
+form.frn_styles div.typical_box {border:1px solid gray;-moz-border-radius: 7px;border-radius: 7px;padding-left:10px;padding-top:5px;padding-bottom:5px;width:auto;max-width:700px;background-color:#efefef;}
+form.frn_styles div.typical_box h4 {margin:0 0 8px 0; font-size:13px;}
+form.frn_styles div.shortcode_indent {margin-left:15px;margin-bottom:10px;}
+form.frn_styles table.customizable_options {width:auto;max-width:1100px;}
+form.frn_styles table.customizable_options td {width:50%;padding-right:25px;}
+form.frn_styles table.customizable_options th {width:50%;text-align:left;font-size:13px;padding-top:10px;}
+table.frn_help_table th {text-align:left;font-size:16px; padding:30px 0 15px 0;}
+form.frn_styles table.customizable_options li {list-style:none;}
+form.frn_styles table.form-table {width:100%;max-width:800px;margin:7px 0; border:1px solid gray; background-color:#efefef;}
+form.frn_styles table.form-table th {font-weight:bold;width:35%;padding:10px;}
+form.frn_styles table.form-table td {margin-bottom:9px;padding:15px 10px;line-height:1.3;vertical-align:middle;}
+form.frn_styles div.frn_help_boxes {display:none;border:1px dashed gray;padding:2px 5px;margin:15px 0;font-size:11px;}
+form.frn_styles a#contextual-help-link {color:#587998;font-weight:bold;font-size:14pt !important;margin:3px 2px;}
+form.frn_styles table.frn_options_table  td{padding:8px 5px 0 8px;vertical-align:top;}
+form.frn_styles table.frn_options_table  th{padding:0 5px 0 0;text-align:left;font-size:12pt;padding-top:12px;padding-bottom:4px;}
+form.frn_styles table.frn_options_table  li{list-style:none;}
+form.frn_styles div.frn_options_table {background-color:#e3e3e3;margin-top:10px;padding:2px 5px;}
+form.frn_styles span.frn_shortcode_sel {cursor:pointer;color:#1e8cbe;font-size:12px;letter-spacing:50%;}
+#screen-meta-links a.show-settings {font-size:20px;font-weight:bold;padding-bottom:3px;}
+.contextual-help-tabs-wrap span {
+	cursor:pointer;
+}
+#frn-settings .plugin-title  {background:url("images/frn_logo.png") no-repeat scroll 95% 44% transparent}
+#frn-settings  {
+	background: -moz-linear-gradient(top,  rgba(201,201,201,0.65) 0%, rgba(0,0,0,0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(201,201,201,0.65)), color-stop(100%,rgba(0,0,0,0)));
+	background: -webkit-linear-gradient(top,  rgba(201,201,201,0.65) 0%,rgba(0,0,0,0) 100%);
+	background: -o-linear-gradient(top,  rgba(201,201,201,0.65) 0%,rgba(0,0,0,0) 100%);
+	background: -ms-linear-gradient(top,  rgba(201,201,201,0.65) 0%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(to bottom,  rgba(201,201,201,0.65) 0%,rgba(0,0,0,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6c9c9c9', endColorstr='#00000000',GradientType=0 );
+	/*background:url("images/plugin_page_bg.png") repeat-x scroll 0 0 #FFFFFF*/
+}

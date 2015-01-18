@@ -1,0 +1,22 @@
+/*
+Theme Name:Intervention 
+Description: Invertention Main Theme
+Version: 1
+Author: Ranklab
+Author URI: http://ranklab.com
+*/
+@import "style/css/layout.css";
+@import "style/css/uniform.default.css";
+@import "style/css/formatting.css";
+
+#assessment-form .yes,
+#assessment-form .no { float:left; width:50px; text-align:center; }
+#assessment-form .question { float:left; padding-left:20px; } 
+
+#assessment-form .field { clear:both; }
+
+#assessment-form fieldset { background-color:#F0F0F0; padding:15px; margin-top:20px; border-radius:10px; }
+
+#assessment-form fieldset.bio input { margin-bottom:20px; }
+
+li.captcha {display:none;}

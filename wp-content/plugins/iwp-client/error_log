@@ -1,0 +1,1 @@
+[10-Dec-2014 02:36:14 America/Chicago] PHP Fatal error:  Call to undefined function get_option() in /home/intervention/public_html/wp-content/plugins/iwp-client/init.php on line 34

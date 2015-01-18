@@ -1,0 +1,66 @@
+<div class="tabs">
+<div class="menu-wrapper">
+  <ul class="tab-menu">
+    <li class="one"><a href="#" class="current">Why Intervention Works</a></li>
+	<li class="two"><a href="#" class="">Signs & Symptoms</a></li>
+	<li class="three"><a href="#" class="">Types of Intervention</a></li>
+	<li class="four"><a href="#" class="">Intervention Process</a></li>
+  </ul>
+</div><!-- end menu-wrapper -->
+<div class="tab-content-wrapper">
+	<div class="one dynamic" >
+		<div class="icon-item man">
+			<div class="text-block">
+				<h2>Item Title Goes Here</h2>
+		   		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			</div><!-- end text-block -->
+	   	</div><!-- end icon-item -->
+	   	
+	   	<div class="icon-item calendar">
+			<div class="text-block">
+				<h2>Item Title Goes Here</h2>
+		   		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			</div><!-- end text-block -->
+	   	</div><!-- end icon-item -->
+	   	
+	   	<div class="icon-item clock">
+			<div class="text-block">
+				<h2>Item Title Goes Here</h2>
+		   		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			</div><!-- end text-block -->
+	   	</div><!-- end icon-item -->
+	   	
+	   	<div class="icon-item heart">
+			<div class="text-block">
+				<h2>Item Title Goes Here</h2>
+		   		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			</div><!-- end text-block -->
+	   	</div><!-- end icon-item -->
+	   	
+	   	<div class="icon-item house">
+			<div class="text-block">
+				<h2>Item Title Goes Here</h2>
+		   		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			</div><!-- end text-block -->
+	   	</div><!-- end icon-item -->
+	   	
+	   	<div class="icon-item save">
+			<div class="text-block">
+				<h2>Item Title Goes Here</h2>
+		   		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			</div><!-- end text-block -->
+	   	</div><!-- end icon-item -->
+	   
+	   
+	</div><!-- end one dynamic -->
+	<div class="two dynamic" style="display:none">
+	   tab two content
+	</div><!-- end one dynamic -->
+	<div class="three dynamic" style="display:none">
+	   tab three content
+	</div><!-- end one dynamic -->
+	<div class="four dynamic" style="display:none">
+	   tab four content
+	</div><!-- end one dynamic -->
+</div><!-- end tab-content-wrapper -->
+</div><!-- end tabs -->
