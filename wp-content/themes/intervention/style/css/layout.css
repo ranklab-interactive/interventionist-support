@@ -133,7 +133,6 @@ body {font: 16px Helvetica, "Helvetica Neue", Arial, sans-serif; min-width:1080p
 body, select, input, textarea {color: #636363;}
 .wrapper{width:1080px; margin:0 auto;}
 .inside{padding:0 10px;}
-.text-block{float:left;}
 .image-block{float:left;}
 
 a {color: #76b617; text-decoration: none;}
@@ -1099,6 +1098,7 @@ footer{background:#000; overflow: auto; clear:both; padding-top:80px; color:#b7b
 
 
 /* Single Interventionist NEW */
+.single-directory .left-content .text-block{display:flex;}
 .single-directory aside h2 {text-align: center; color: #000;}
 .single-directory .contact-block h3 {text-align: center;}
 .single-directory .headshot {
@@ -1123,20 +1123,31 @@ footer{background:#000; overflow: auto; clear:both; padding-top:80px; color:#b7b
 
 .single-directory .info-block {background: initial; line-height: 1; margin-bottom: 0;}
 .single-directory .info-block .inside {padding: 5px 0 0 0;}
-.single-directory .info-block .text-block h2 {clear: none; margin-bottom: 5px; padding-top: 30px;}
-
-.single-directory .address {font-weight: bold;}
-.single-directory .company {font-style: italic;}
+.single-directory .info-block .text-block h2 {clear: none; margin-bottom: 5px; padding-top: 15px;}
 
 .single-directory .accordion h3 {background: #74b801; color: #FFF;}
-.single-directory .bio {float: left;}
-.single-directory .headshot-linkedin {display: inline-block; float: left;}
+
+/*//___Single Interventionist Page Info Block 1
+This block contains the image, contact information, specializations, etc. information
+___\\*/
+.single-directory .info-block-1{display:flex;flex-direction:column}
+.single-directory .info-block-1{display:flex;flex-direction:column}
+.single-directory .info-block-1 > .interventionist-additional-info{margin-top: 15px;text-align: center}
+.single-directory .info-block-1 > .interventionist-additional-info > div{padding: 0 0 10px;}
+.single-directory .info-block-1 > .interventionist-additional-info > div >  h4{text-transform: uppercase; color: gray;margin-bottom: 5px;font-size: 12px;}
+.single-directory .info-block-1 > .interventionist-additional-info > div >  p, p.interventionist-states{color: #3A4425; font-size: 14px;font-weight: normal;}
+
 .single-directory .linkedin-container {clear: both; display: block}
 .single-directory .linkedin {/*float: none; margin-left: auto; margin-right: auto;*/ margin-left: 30px; margin-right: 10px;}
-
 .single-directory .website-container {}
 .single-directory .website-container a {background: url(../images/website-link.png) center left no-repeat; text-indent: -9999px; display: block; height: 40px; width: 40px; float: left;}
+/*//___Single Interventionist Page Info Block 2
+This block contains biography
+___\\*/
+.single-directory .info-block-2{display:flex;flex-direction:column}
+.single-directory .info-block-2 > .info-block-online-contact {margin: 0 auto; min-width: 100%;}
 
+.single-directory .interventionist-video{border-top:1px solid #74b801;clear:both;padding-top:30px}
 .single-directory .video {
 	float: left;
 	width: 640px;

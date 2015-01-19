@@ -89,6 +89,15 @@ background: url('.get_bloginfo('template_directory').'/style/images/wp_dashboard
 #wp-admin-bar-site-name:hover > a.ab-item:before { opacity: 1; }
 </style>';
 }
+add_action('admin_head', 'my_custom_fonts');
+
+function my_custom_fonts() {
+  echo '<style>
+.rwmb-text-wrapper:nth-child(odd){
+      background: #fafafa;
+    } 
+  </style>';
+}
 }
 
 
