@@ -537,7 +537,7 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                     
                 <?php
                                         if(get_post_meta($post->ID,'frothy_video', true)) echo '<div class="interventionist-video"><h3>Watch Video</h3><div class="video">'.get_post_meta($post->ID,'frothy_video', true).'</div></div>';				
-                                ?>
+                                ?> 
                 <?php include(TEMPLATEPATH . "/library/includes/page-share.php");?>
             </div><!-- end left-content -->
             <aside>
