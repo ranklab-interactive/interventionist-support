@@ -417,13 +417,7 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
 <?php get_header(); ?>
     
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
-<?php include(TEMPLATEPATH . "/library/includes/modules/page-id.php"); 
-    
-    
-    
-    
-    
-    
+<?php include(TEMPLATEPATH . "/library/includes/modules/page-id.php");     
     
 /////
 /// Page Layout
@@ -486,7 +480,6 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                                         </div>
                                     </div>
                                     <div>
-                                        <h4>Specialties</h4>
                                 <?php
                 $terms = wp_get_post_terms($post->ID, 'interventionist-type', array(
                     'orderby' => 'parent',
@@ -498,11 +491,10 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                         if( 0 != $term->parent && $term->parent == "38")
                             $output[] = '' . $term->name . '';            
                     } ?>        
-                                        <p><?php echo '' . join( "</p><p>", $output ) . ''; ?> </p>
+                                        <h4>Specialties</h4><p><?php echo '' . join( "</p><p>", $output ) . ''; ?> </p>
         <?php } ?>
                                     </div>
                                     <div>
-                                        <h4>Other Services</h4>
                             <?php
                 $terms = wp_get_post_terms($post->ID, 'interventionist-type', array(
                     'orderby' => 'parent',
@@ -514,13 +506,12 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                         if( 0 != $term->parent && $term->parent == "42")
                             $output[] = '' . $term->name . '';            
                     } ?>        
-                                        <p><?php echo '' . join( "</p><p>", $output ) . ''; ?> </p>
+                                        <h4>Other Services</h4><p><?php echo '' . join( "</p><p>", $output ) . ''; ?> </p>
         <?php } ?>
                                     </div>
                                     <div>
-                                        <h4>Years of Experience</h4>
                             <?php 
-                                if(get_post_meta($post->ID,'frothy_support_years_of_experience', true)) echo '<p>'.get_post_meta($post->ID,'frothy_support_years_of_experience', true).'</p>';
+                                if(get_post_meta($post->ID,'frothy_support_years_of_experience', true)) echo '<h4>Years of Experience</h4><p>'.get_post_meta($post->ID,'frothy_support_years_of_experience', true).'</p>';
                             ?>
                                     </div>
                                 </div>
@@ -528,6 +519,7 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                             <!--This is where the content on the right begins-->
                             <div class="info-block-2">
                                 <h2><span itemprop="name"><?php the_title(); ?></span></h2>
+                                <h3><small><span itemprop="name"><?php if(get_post_meta($post->ID,'frothy_support_credentials', true)) echo get_post_meta($post->ID,'frothy_support_credentials', true); ?></span></small></h3>
 <?php if(get_post_meta($post->ID,'frothy_support_autobiography', true)) echo '<div class="interventionist-autobio"><h3>In My Words</h3><p>'.get_post_meta($post->ID,'frothy_support_autobiography', true).'</p></div>'; ?>   
                                 <h3>Bio</h3>
                     <?php the_content(); ?>

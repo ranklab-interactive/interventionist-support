@@ -183,7 +183,6 @@ $meta_boxes[] = array(
 			'name' => 'Main State',
 			'id' => $prefix . 'state_select',
 			'type' => 'select',						// select box
-                                                'multiple' => true,                                                                                     // this option allows for multiple states to be selected. You can hold down "command" or "CTRL" and click on the desired states.
 			'options' => array(						// array of key => value pairs for select box
 			    'Alabama' => 'Alabama',
 			    'Alaska' => 'Alaska',
@@ -301,7 +300,7 @@ $meta_boxes[] = array(
 			    'Wyoming' => 'Wyoming',
                                 
 			),
-			'desc' => 'Select other state(s) that interventionist supports'
+			'desc' => 'Select other state(s) that interventionist supports. If you hold down CTRL (PC) or command (Mac), you will be able to select multiple states. Hold down CTRL/command and click to remove selections.'
 		),
         array(
 			'name' => 'Company Name',					// field name
@@ -344,11 +343,10 @@ $meta_boxes[] = array(
                                                 'id' => 'fake_divider_id', // Not used, but needed
                                 ),
         array(
-			'name' => 'Credentials',			
-			'desc' => 'Please add all relevant credentials here',
+			'name' => 'Subtitle',			
+			'desc' => 'Please add desired subtitle here',
 			'id' => $prefix . 'support_credentials',	
 			'type' => 'text',
-                                                'clone' => true
 		),
         array(
 			'name' => 'Years of Experience',			
