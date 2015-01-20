@@ -468,9 +468,9 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                                 <?php 
 //This extra code replaces full  state names with the abbreviated form.                                
                                 $states_abbr = array( 'Alabama' => 'AL', 'Alaska' => 'AK',  'Arizona' =>  'AZ', 'Arkansas' =>  'AR', 'California' => 'CA', 'Colorado' => 'CO', 'Connecticut' => 'CT', 'Delaware' => 'DE', 'District Of Columbia' => 'DC','Florida'=>'FL', 'Georgia' => 'GA', 'Hawaii' => 'HI', 'Idaho' => 'ID', 'Illinois' => 'IL', 'Indiana' => 'IN', 'Iowa' => 'IA', 'Kansas' => 'KS', 'Kentucky' => 'KY', 'Louisiana' => 'LA', 'Maine' => 'ME', 'Maryland' => 'MD', 'Massachusetts' => 'MA', 'Michigan' => 'MI', 'Minnesota' => 'MN', 'Mississippi' => 'MS', 'Missouri' => 'MO', 'Montana' => 'MT', 'Nebraska' => 'NE', 'Nevada' => 'NV', 'New Hampshire' => 'NH', 'New Jersey' => 'NJ', 'New Mexico' => 'NM', 'New York' => 'NY', 'North Carolina' => 'NC', 'North Dakota' => 'ND', 'Ohio' => 'OH', 'Oklahoma' => 'OK', 'Oregon' => 'OR', 'Pennsylvania' => 'PA', 'Rhode Island' => 'RI', 'South Carolina' => 'SC', 'South Dakota' => 'SD', 'Tennessee' => 'TN', 'Texas' => 'TX', 'Utah' => 'UT', 'Vermont' => 'VT', 'Virginia' => 'VA', 'Washington' => 'WA', 'West Virginia' => 'WV', 'Wisconsin' => 'WI', 'Wyoming' => 'WY');
-                                $main_state = get_post_meta($post->ID,'frothy_main_state_select', true);
+                                $main_state = get_post_meta($post->ID,'frothy_state_select', true);
                                 $main_state_abbr = str_replace(array_keys($states_abbr), array_values($states_abbr), $main_state);
-                                $support_states = get_post_meta($post->ID,'frothy_state_select', false);
+                                $support_states = get_post_meta($post->ID,'frothy_state_select_others', false);
                                 $small_states = str_replace(array_keys($states_abbr), array_values($states_abbr), $support_states);
                                 if ($small_states) {
                                             echo $main_state_abbr.', ';
@@ -528,7 +528,8 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                             <!--This is where the content on the right begins-->
                             <div class="info-block-2">
                                 <h2><span itemprop="name"><?php the_title(); ?></span></h2>
-<?php if(get_post_meta($post->ID,'frothy_support_autobiography', true)) echo '<h3>In My Words</h3><p>'.get_post_meta($post->ID,'frothy_support_autobiography', true).'</p>'; ?>                                
+<?php if(get_post_meta($post->ID,'frothy_support_autobiography', true)) echo '<div class="interventionist-autobio"><h3>In My Words</h3><p>'.get_post_meta($post->ID,'frothy_support_autobiography', true).'</p></div>'; ?>   
+                                <h3>Bio</h3>
                     <?php the_content(); ?>
                             </div>
                         </div><!--end text-block -->

@@ -245,7 +245,7 @@ section.gray3{background:#ebebeb;}
 .content-block{padding:60px 0; overflow: visible;}
 .full-width{clear:both; float:left; overflow:auto; width:100%;}
 
-.left-content{width: 640px; float:left;}
+.left-content{width: 650px; float:left;}
 .left-content ul,.full-width ul, .left-content ol, .full-width ol{list-style-position: inside;}
 .left-content ul, .full-width ul{list-style-image: url(../images/ul-arrow.png); margin-bottom:20px;}
 .left-content ul li { margin-bottom:10px; }
@@ -611,12 +611,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76b617', end
 #further-reading ul{ margin-bottom:0; list-style-image: none; padding:0 40px;}
 #further-reading ul li a {display:block; background: url(../images/tag.png) top left no-repeat; padding-left:30px; font-size:16px; line-height: 15px; margin-bottom:20px; font-family: 'Coustard', serif; color:#000;}
 #further-reading ul li a:hover{color:#76b617;}
-
-
-
-
-
-
 
 /*
 	Interventionists
@@ -1101,25 +1095,8 @@ footer{background:#000; overflow: auto; clear:both; padding-top:80px; color:#b7b
 .single-directory .left-content .text-block{display:flex;}
 .single-directory aside h2 {text-align: center; color: #000;}
 .single-directory .contact-block h3 {text-align: center;}
-.single-directory .headshot {
-	width: 125px;
-	height: 125px;
-	overflow: hidden;
-	margin-bottom: 20px;
-	margin-left: 5px;
-	border-radius: 100%;
-	border: 2px solid #FFF;
-	margin-right: 20px;
-	float: left;
-	display: inline-block;
-	-webkit-box-shadow: 0px 0px 0 2px #74b801;
-	box-shadow: 0px 0px 0 2px #74b801;
-}
-.single-directory .headshot img {	
-	float: none;
-	border: none;
-	margin-bottom: 0;
-}
+.single-directory .headshot{width:125px;height:125px;overflow:hidden;margin-bottom:20px;margin-left:5px;border-radius:100%;border:2px solid #FFF;margin-right:20px;float:left;display:inline-block;-webkit-box-shadow:0 0 0 2px #74b801;box-shadow:0 0 0 2px #74b801}
+.single-directory .headshot img{float:none;border:0;margin-bottom:0}
 
 .single-directory .info-block {background: initial; line-height: 1; margin-bottom: 0;}
 .single-directory .info-block .inside {padding: 5px 0 0 0;}
@@ -1130,8 +1107,7 @@ footer{background:#000; overflow: auto; clear:both; padding-top:80px; color:#b7b
 /*//___Single Interventionist Page Info Block 1
 This block contains the image, contact information, specializations, etc. information
 ___\\*/
-.single-directory .info-block-1{display:flex;flex-direction:column}
-.single-directory .info-block-1{display:flex;flex-direction:column}
+.single-directory .info-block-1{display:flex;flex-direction:column;margin-right: 15px;}
 .single-directory .info-block-1 > .interventionist-additional-info{margin-top: 15px;text-align: center}
 .single-directory .info-block-1 > .interventionist-additional-info > div{padding: 0 0 10px;}
 .single-directory .info-block-1 > .interventionist-additional-info > div >  h4{text-transform: uppercase; color: gray;margin-bottom: 5px;font-size: 12px;}
@@ -1145,15 +1121,15 @@ ___\\*/
 This block contains biography
 ___\\*/
 .single-directory .info-block-2{display:flex;flex-direction:column}
+.single-directory .info-block-2 > p{line-height: 20px;}
 .single-directory .info-block-2 > .info-block-online-contact {margin: 0 auto; min-width: 100%;}
+.single-directory .info-block-2  .interventionist-autobio {font-weight: bold;margin: 15px 0;font-style: italic;}
+.single-directory .info-block-2  .interventionist-autobio {z-index: 1}
+.single-directory .info-block-2  .interventionist-autobio > p {font-size: 20px;z-index: 3}
+.single-directory .info-block-2 .interventionist-autobio>p:before{content:"\201c";color:#EFEFEF;font-family:"Coustard";font-size:120px;font-style:normal;position:absolute;z-index:-1;top: 12px; left: -12px;}
 
 .single-directory .interventionist-video{border-top:1px solid #74b801;clear:both;padding-top:30px}
-.single-directory .video {
-	float: left;
-	width: 640px;
-	padding-bottom: 56.25%;
-	margin-bottom: 20px;
-}
+.single-directory .video{float:left;width:640px;padding-bottom:56.25%;margin-bottom:20px}
 .single-directory .video iframe {
 	position: absolute;
 	top: 0;

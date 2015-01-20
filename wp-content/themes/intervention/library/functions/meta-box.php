@@ -181,7 +181,7 @@ $meta_boxes[] = array(
 		),
 		array(
 			'name' => 'Main State',
-			'id' => $prefix . 'main_state_select',
+			'id' => $prefix . 'state_select',
 			'type' => 'select',						// select box
                                                 'multiple' => true,                                                                                     // this option allows for multiple states to be selected. You can hold down "command" or "CTRL" and click on the desired states.
 			'options' => array(						// array of key => value pairs for select box
@@ -243,7 +243,7 @@ $meta_boxes[] = array(
 		),
 		array(
 			'name' => 'Other States of Operation',
-			'id' => $prefix . 'state_select',
+			'id' => $prefix . 'state_select_others',
 			'type' => 'select',						// select box
                                                 'multiple' => true,                                                                                     // this option allows for multiple states to be selected. You can hold down "command" or "CTRL" and click on the desired states.
 			'options' => array(						// array of key => value pairs for select box
