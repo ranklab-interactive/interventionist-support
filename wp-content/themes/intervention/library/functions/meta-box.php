@@ -354,6 +354,12 @@ $meta_boxes[] = array(
                             
 		),
             array(
+			'name' => 'Featured Interventionist Interview Excerpt',					// field name
+			'desc' => "Place Content for Featured Interventionist's Excerpt Interview",	// field description, optional
+			'id' => $prefix . 'support_featured_interview_excerpt',				// field id, i.e. the meta key
+			'type' => 'WYSIWYG',					// text box
+		),
+            array(
 			'name' => 'Featured Interventionist Interview',					// field name
 			'desc' => "Place content for Featured Interventionist's Interview",	// field description, optional
 			'id' => $prefix . 'support_featured_interview',				// field id, i.e. the meta key

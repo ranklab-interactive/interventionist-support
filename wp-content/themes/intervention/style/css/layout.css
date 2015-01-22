@@ -1092,7 +1092,7 @@ footer{background:#000; overflow: auto; clear:both; padding-top:80px; color:#b7b
 
 
 /* Single Interventionist NEW */
-.single-directory .left-content .text-block{display:flex;}
+.single-directory .left-content .text-block{display:flex;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;}
 .single-directory aside h2 {text-align: center; color: #000;}
 .single-directory .contact-block h3 {text-align: center;}
 .single-directory .headshot{width:125px;height:125px;overflow:hidden;margin-bottom:20px;margin-left:5px;border-radius:100%;border:2px solid #FFF;margin-right:20px;float:left;display:inline-block;-webkit-box-shadow:0 0 0 2px #74b801;box-shadow:0 0 0 2px #74b801}
@@ -1107,7 +1107,7 @@ footer{background:#000; overflow: auto; clear:both; padding-top:80px; color:#b7b
 /*//___Single Interventionist Page Info Block 1
 This block contains the image, contact information, specializations, etc. information
 ___\\*/
-.single-directory .info-block-1{display:flex;flex-direction:column;margin-right: 15px;}
+.single-directory .info-block-1{display:flex;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;-moz-flex-direction:column;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;margin-right: 15px;}
 .single-directory .info-block-1 > .interventionist-additional-info{margin-top: 15px;text-align: center}
 .single-directory .info-block-1 > .interventionist-additional-info > div{padding: 0 0 10px;}
 .single-directory .info-block-1 > .interventionist-additional-info > div >  h4{text-transform: uppercase; color: gray;margin-bottom: 5px;font-size: 12px;}
@@ -1120,7 +1120,7 @@ ___\\*/
 /*//___Single Interventionist Page Info Block 2
 This block contains biography
 ___\\*/
-.single-directory .info-block-2{display:flex;flex-direction:column}
+.single-directory .info-block-2{display:flex;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;-moz-flex-direction:column;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width: 550px;}
 .single-directory .info-block-2 > h3 > small{color: #636363; font-size: 16px;font-family: "Helvetica", sans-serif;font-weight: bold;}
 .single-directory .info-block-2 > p{line-height: 20px;}
 .single-directory .info-block-2 > .info-block-online-contact {margin: 0 auto; min-width: 100%;}
@@ -1139,12 +1139,12 @@ ___\\*/
 /* Interventionist Directory */ 
 .featured-interventionist{border:1px solid #CBCBCB;margin-bottom:45px;min-height: 230px;}
 .featured-interventionist > h2{padding: 15px 0px;margin-bottom: 15px !important;background: #F0F0F0;border-bottom: 1px solid #CBCBCB;}
-.featured-interventionist>.featured-details{display:flex;flex-direction:column;float:left;padding:15px 30px;text-align:center}
+.featured-interventionist>.featured-details{display:flex;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;-moz-flex-direction:column;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;float:left;padding:15px 30px;text-align:center}
 .featured-interventionist>.featured-details>.headshot{height:120px;margin:0 auto;width:120px;border: 4px solid #FFF;}
 .featured-interventionist>.featured-details>.headshot > img{height: 100%;}
 .featured-interventionist > .featured-details > .text-block > p {line-height: 18px;margin-top: 15px;padding-right: 0;}
 .featured-interventionist > .featured-details > .text-block span.featured-company-name {font-size: 14px;}
-.featured-interventionist > .featured-bio{display: flex;flex-direction: column;margin-bottom: 15px;padding-right: 30px;}
+.featured-interventionist > .featured-bio{display:flex;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;-moz-flex-direction:column;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;margin-bottom: 15px;padding-right: 30px;}
 .featured-interventionist > .featured-bio > p.bio-blurb{height: auto;padding-right: 0;}
 .featured-interventionist > .featured-bio > a.interventionist-link{text-align: right;}
 

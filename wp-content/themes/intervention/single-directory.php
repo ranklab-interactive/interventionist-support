@@ -479,22 +479,24 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                                             </p> 
                                         </div>
                                     </div>
-                                    <div>
+
                                 <?php
                 $terms = wp_get_post_terms($post->ID, 'interventionist-type', array(
                     'orderby' => 'parent',
                     'order' => 'DESC'
                 ));
                 if ( !empty( $terms ) ) {
-                    $output = array();
+                    $outputspec = array();
                     foreach ( $terms as $term ){
-                        if( 0 != $term->parent && $term->parent == "38")
-                            $output[] = '' . $term->name . '';            
-                    } ?>        
-                                        <h4>Specialties</h4><p><?php echo '' . join( "</p><p>", $output ) . ''; ?> </p>
-        <?php } ?>
-                                    </div>
+                        if( 0 != $term->parent && $term->parent == "38"){
+                        $outputspec[] = '' . $term->name . '';  
+                        $spectitle = "<h4>Specialties</h4>";?>
                                     <div>
+                                       <?php echo ''. $spectitle .'' ?><p><?php echo '' . join( "</p><p>", $outputspec ) . ''; ?> </p>
+                                    </div>
+        <?php } 
+           }          
+                    }?>
                             <?php
                 $terms = wp_get_post_terms($post->ID, 'interventionist-type', array(
                     'orderby' => 'parent',
@@ -503,17 +505,21 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                 if ( !empty( $terms ) ) {
                     $output = array();
                     foreach ( $terms as $term ){
-                        if( 0 != $term->parent && $term->parent == "42")
-                            $output[] = '' . $term->name . '';            
-                    } ?>        
-                                        <h4>Other Services</h4><p><?php echo '' . join( "</p><p>", $output ) . ''; ?> </p>
-        <?php } ?>
-                                    </div>
-                                    <div>
+                        if (0 != $term->parent && $term->parent == "43") {
+                                                            $output[] = '' . $term->name . '';
+                                                            $othertitle = "<h4>Other Services</h4>";
+                                                             ?>
+                        <div>
+                        <?php echo ''. $othertitle .'' ?><p><?php echo '' . join( "</p><p>", $output ) . ''; ?> </p>
+                        </div>
+                    <?php } 
+                    
+                        }
+               }?>
+                                    
                             <?php 
-                                if(get_post_meta($post->ID,'frothy_support_years_of_experience', true)) echo '<h4>Years of Experience</h4><p>'.get_post_meta($post->ID,'frothy_support_years_of_experience', true).'</p>';
+                                if(get_post_meta($post->ID,'frothy_support_years_of_experience', true)) echo '<div><h4>Years of Experience</h4><p>'.get_post_meta($post->ID,'frothy_support_years_of_experience', true).'</p></div>';
                             ?>
-                                    </div>
                                 </div>
                             </div>
                             <!--This is where the content on the right begins-->
@@ -530,10 +536,10 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                 </div><!-- end info-block -->
                     
                 <?php
-                                        if(get_post_meta($post->ID,'frothy_video', true)) echo '<div class="interventionist-video"><h3>Watch Video</h3><div class="video">'.get_post_meta($post->ID,'frothy_video', true).'</div></div>';				
+                                        if(get_post_meta($post->ID,'frothy_video', true)) {echo '<div class="interventionist-video"><h3>Watch Video</h3><div class="video">'.get_post_meta($post->ID,'frothy_video', true).'</div></div>';}				
                                 ?> 
                                 <?php
-                                        if(get_post_meta($post->ID,'frothy_support_featured_interview', true)) echo '<div class="interventionist-featured-interview" id="featured-interview"><h3>Get to Know: '.get_the_title().'</h3><p>'.get_post_meta($post->ID,'frothy_support_featured_interview', true).'</p></div>';				
+                                        if(get_post_meta($post->ID,'frothy_support_featured_interview', true)){ echo '<div class="interventionist-featured-interview" id="featured-interview"><h3>Get to Know: '.get_the_title().'</h3><p>'.get_post_meta($post->ID,'frothy_support_featured_interview_excerpt', true).'</p><p>'.get_post_meta($post->ID,'frothy_support_featured_interview', true).'</p></div>';}
                                 ?> 
                 <?php include(TEMPLATEPATH . "/library/includes/page-share.php");?>
             </div><!-- end left-content -->

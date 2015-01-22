@@ -154,7 +154,7 @@ die;
  
 add_menu_page($themename, $themename, 'administrator', basename(__FILE__), 'mytheme_admin');
 }
-
+/*This script allows for custom taxonomy slugs to appear in the body as a "custom_tax_{slug}*/
 function featured_custom_taxonomy_in_body_class( $classes ){
   if( is_singular() )
   {
