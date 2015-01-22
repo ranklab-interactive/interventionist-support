@@ -7,6 +7,7 @@ Template Name: [Interventionist] NEW
   4/7/14   - edited again to limit submissions
   4/24/14  - fixed share box from blocking clicks on first two entries, fixed name issues in email footers, removed abhi from CCs, removed interventionist from getting directly emailed, added Call Center CCs (RACs), added variables to make code more similar to sober living code
   5/19/14 - changed "from" of email to our team to generic email instead of including the person's email
+  01/21/15 - Updated to 2-column layout for interventionist information. Added more information and details below profile pic which can be edited when editing an interventionist profile. Added Featured information styling for if the "Featured" category is selected. 
 */
 ?>
 <?php 
@@ -524,7 +525,7 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                             </div>
                             <!--This is where the content on the right begins-->
                             <div class="info-block-2">
-                                <h2><span itemprop="name"><?php the_title(); ?></span></h2>
+                                <h2 id="interventionist-name"><span itemprop="name"><?php the_title(); ?></span></h2>
                                 <a href="#featured-interview"><span class="featured-interview">Interview</span></a>
                                 <h3><small><span itemprop="name"><?php if(get_post_meta($post->ID,'frothy_support_credentials', true)) echo get_post_meta($post->ID,'frothy_support_credentials', true); ?></span></small></h3>
 <?php if(get_post_meta($post->ID,'frothy_support_autobiography', true)) echo '<div class="interventionist-autobio"><h3>In My Words</h3><p>'.get_post_meta($post->ID,'frothy_support_autobiography', true).'</p></div>'; ?>   
@@ -539,7 +540,7 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                                         if(get_post_meta($post->ID,'frothy_video', true)) {echo '<div class="interventionist-video"><h3>Watch Video</h3><div class="video">'.get_post_meta($post->ID,'frothy_video', true).'</div></div>';}				
                                 ?> 
                                 <?php
-                                        if(get_post_meta($post->ID,'frothy_support_featured_interview', true)){ echo '<div class="interventionist-featured-interview" id="featured-interview"><h3>Get to Know: '.get_the_title().'</h3><p>'.get_post_meta($post->ID,'frothy_support_featured_interview_excerpt', true).'</p><p>'.get_post_meta($post->ID,'frothy_support_featured_interview', true).'</p></div>';}
+                                        if(get_post_meta($post->ID,'frothy_support_featured_interview', true)){ echo '<div class="interventionist-featured-interview" id="featured-interview"><h3>Get to Know: '.get_the_title().'</h3><p>'.get_post_meta($post->ID,'frothy_support_featured_interview_excerpt', true).'</p><p>'.get_post_meta($post->ID,'frothy_support_featured_interview', true).'</p><a href="#interventionist-name"><span class="featured-interview-top">Learn more about '.get_the_title().'</span></a></div>';}
                                 ?> 
                 <?php include(TEMPLATEPATH . "/library/includes/page-share.php");?>
             </div><!-- end left-content -->

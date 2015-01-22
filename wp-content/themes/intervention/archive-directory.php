@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+
+/* 01/21/15 - Added Featured Interventionist of the month block. */
+
+get_header(); ?>
 <?php include(TEMPLATEPATH . "/library/includes/modules/page-id.php");?>
 
 <div class="content-block" style="padding-top:0px; margin: 0px 0px -50px 0px; background-color:#F0F0F0;">
@@ -53,6 +57,7 @@
     </div><!-- end wrapper div -->
 </div><!-- end content-block for states open div -->
 <div id="interventionist-list">
+	<h2 class="sub-text" style="text-align:center; margin-bottom: 25px;">This Month's Featured Interventionist</h2>
     <div class="wrapper">
         <div class="inside">
             <div class="featured-interventionist">
@@ -91,7 +96,7 @@ while (have_posts()) : the_post();
                 </div><!--End Featured Interventionist Details Block-->
                 <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
                 <div class="featured-bio">
-                    <p class="bio-blurb"><?php echo get_post_meta($post->ID,'frothy_support_featured_interview_excerpt', true);?>
+                    <p class="bio-blurb"><?php echo get_post_meta($post->ID,'frothy_support_featured_interview_excerpt', true);?></p>
                     <a class="interventionist-link" href="<?php the_permalink();?>#featured-interview">Read More »</a>
                 </div>
                     
