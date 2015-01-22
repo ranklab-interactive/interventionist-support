@@ -155,12 +155,28 @@ die;
 add_menu_page($themename, $themename, 'administrator', basename(__FILE__), 'mytheme_admin');
 }
 
+function featured_custom_taxonomy_in_body_class( $classes ){
+  if( is_singular() )
+  {
+    $custom_terms = get_the_terms(0, 'interventionist-type');
+    if ($custom_terms) {
+      foreach ($custom_terms as $custom_term) {
+        $classes[] = 'custom_tax_' . $custom_term->slug;
+      }
+    }
+  }
+  return $classes;
+}
+
+add_filter( 'body_class', 'featured_custom_taxonomy_in_body_class' );
+
 function mytheme_add_init() {
 
 $file_dir=get_bloginfo('template_directory');
 wp_enqueue_style("functions", $file_dir."/library/functions/setup_files/frothy-admin.css", false, "1.0", "all");
 
 }
+
 function mytheme_admin() {
  
 global $themename, $shortname, $options;

@@ -92,7 +92,7 @@ while (have_posts()) : the_post();
                 <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
                 <div class="featured-bio">
                     <p class="bio-blurb"><?php echo get_the_excerpt(); ?></p>
-                    <a class="interventionist-link" href="<?php the_permalink();?>">Read More »</a>
+                    <a class="interventionist-link" href="<?php the_permalink();?>#featured-interview">Read More »</a>
                 </div>
                     
     <?php 

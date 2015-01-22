@@ -101,9 +101,7 @@ if ( !class_exists( 'RWMB_Taxonomy_Field' ) ) {
  * You also can make prefix empty to disable it
  */
 $prefix = 'frothy_';
-    
-$meta_boxes = array( );
-    
+
 $meta_boxes[] = array(
 	'id' => 'page-options',
 	'title' => 'Page Options',
@@ -355,9 +353,15 @@ $meta_boxes[] = array(
 			'type' => 'text',
                             
 		),
+            array(
+			'name' => 'Featured Interventionist Interview',					// field name
+			'desc' => "Place content for Featured Interventionist's Interview",	// field description, optional
+			'id' => $prefix . 'support_featured_interview',				// field id, i.e. the meta key
+			'type' => 'WYSIWYG',					// text box
+		),
 	)
 );
-    
+   
 /**
  * Register meta boxes
  * Make sure there's no errors when the plugin is deactivated or during upgrade

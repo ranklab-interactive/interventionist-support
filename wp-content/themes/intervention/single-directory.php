@@ -519,6 +519,7 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                             <!--This is where the content on the right begins-->
                             <div class="info-block-2">
                                 <h2><span itemprop="name"><?php the_title(); ?></span></h2>
+                                <a href="#featured-interview"><span class="featured-interview">Interview</span></a>
                                 <h3><small><span itemprop="name"><?php if(get_post_meta($post->ID,'frothy_support_credentials', true)) echo get_post_meta($post->ID,'frothy_support_credentials', true); ?></span></small></h3>
 <?php if(get_post_meta($post->ID,'frothy_support_autobiography', true)) echo '<div class="interventionist-autobio"><h3>In My Words</h3><p>'.get_post_meta($post->ID,'frothy_support_autobiography', true).'</p></div>'; ?>   
                                 <h3>Bio</h3>
@@ -530,6 +531,9 @@ This email was sent from the information page for '.$interventionist_name.' ('.$
                     
                 <?php
                                         if(get_post_meta($post->ID,'frothy_video', true)) echo '<div class="interventionist-video"><h3>Watch Video</h3><div class="video">'.get_post_meta($post->ID,'frothy_video', true).'</div></div>';				
+                                ?> 
+                                <?php
+                                        if(get_post_meta($post->ID,'frothy_support_featured_interview', true)) echo '<div class="interventionist-featured-interview" id="featured-interview"><h3>Get to Know: '.get_the_title().'</h3><p>'.get_post_meta($post->ID,'frothy_support_featured_interview', true).'</p></div>';				
                                 ?> 
                 <?php include(TEMPLATEPATH . "/library/includes/page-share.php");?>
             </div><!-- end left-content -->

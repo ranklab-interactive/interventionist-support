@@ -1124,12 +1124,17 @@ ___\\*/
 .single-directory .info-block-2 > h3 > small{color: #636363; font-size: 16px;font-family: "Helvetica", sans-serif;font-weight: bold;}
 .single-directory .info-block-2 > p{line-height: 20px;}
 .single-directory .info-block-2 > .info-block-online-contact {margin: 0 auto; min-width: 100%;}
-.single-directory .info-block-2 .interventionist-autobio {font-weight: bold;margin: 15px 0;font-style: italic;}
-.single-directory .info-block-2 .interventionist-autobio>p{font-size:20px;line-height:26px}
+.single-directory .info-block-2 .interventionist-autobio {font-weight: bold;margin: 15px 0;}
+.single-directory .info-block-2 .interventionist-autobio>p{font-size:20px;line-height:26px;font-style: italic}
 .single-directory .info-block-2 .interventionist-autobio > p:before{content:"\201c";color:#EFEFEF;font-family:"Coustard";font-size:120px;font-style:normal;position:absolute;z-index:-1;top: 12px; left: -12px;}
-.single-directory .interventionist-video{border-top:1px solid #74b801;clear:both;padding-top:30px}
+.single-directory .interventionist-video, .interventionist-featured-interview{border-top:1px solid #74b801;clear:both;padding-top:30px}
 .single-directory .video{float:left;width:640px;padding-bottom:56.25%;margin-bottom:20px}
 .single-directory .video iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+
+/*//___Featured Interventionist Single Page___\\*/
+.featured-interview{display: none;}
+.custom_tax_featured .info-block-2 .featured-interview{background:url("../images/featured-interview.png") no-repeat scroll 10px 10px #f7f7f7;border-color:#e0e0e0;border-style:solid;border-width:1px;color:#555;display:block;font-size:12px;font-weight:bold;padding:12px 12px 12px 0;position:absolute;right:0;text-align:right;top:15px;width:90px}
+.custom_tax_featured .info-block-2 .featured-interview:hover{color: #76b617;background-color: #fcfcfc}
 
 /* Interventionist Directory */ 
 .featured-interventionist{border:1px solid #CBCBCB;margin-bottom:45px;min-height: 230px;}
